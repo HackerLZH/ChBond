@@ -1,0 +1,12 @@
+{
+    ".url": {
+        "ChBond.Application": {
+            "title": "ChBond",
+            "icon": "images/icon_{0}.png",
+            "type": "iframe",
+            "protocol": "http",
+            "url": "/cgi/ThirdParty/ChBond/index.cgi/",
+            "allUsers": false
+        }
+    }
+}

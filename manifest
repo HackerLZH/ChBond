@@ -1,0 +1,10 @@
+appname               = ChBond
+version               = 1.0.0
+display_name          = ChBond
+desc                  = "切换Linux Bond网口"
+platform              = all
+source                = thirdparty
+maintainer            = lzh
+distributor           = lzh
+desktop_uidir         = ui
+desktop_applaunchname = ChBond.Application
