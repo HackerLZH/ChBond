@@ -1,7 +1,7 @@
 #!/bin/bash
 exec 2>/tmp/chbond.log
 
-bond=bond0
+bond=$(cat /var/apps/ChBond/BOND_NAME)
 BASE=/var/apps/ChBond/target/www
 
 # 输出JSON响应头
@@ -63,7 +63,8 @@ function get_master_slaves() {
         else
             echo -n ","
         fi
-        echo -n "\"${slave}\""
+        speed=$(cat /sys/class/net/"$slave"/speed)
+        echo -n "{\"name\": \"${slave}\", \"speed\": ${speed}}"
     done
     echo -n "], \"active_slave\": \"${active_slave}\", \"master\": \"${bond}\"}"
     echo ""
@@ -88,6 +89,13 @@ function toggle_slave() {
         echo '{"success": false, "msg": "没有root权限或命令执行失败"}'
     fi
 }
+
+# 检查聚合网卡是否存在
+if [ ! -f /proc/net/bonding/"$bond" ]; then
+    html_header
+    echo "聚合网卡 $bond 不存在，请在应用设置中设置有效网卡名！"
+    exit 0
+fi
 
 # 根据请求类型分发处理
 if [ -n "$QUERY_STRING" ]; then

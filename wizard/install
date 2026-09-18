@@ -1,0 +1,19 @@
+[
+  {
+    "stepTitle": "设置",
+    "items": [
+      {
+        "type": "text",
+        "field": "BOND_NAME",
+        "label": "聚合网卡名",
+        "initValue": "bond0",
+        "rules": [
+          {
+            "required": true,
+            "message": "输入聚合网卡名"
+          }
+        ]
+      }
+    ]
+  }
+]

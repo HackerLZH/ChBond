@@ -1,10 +1,12 @@
 appname               = ChBond
-version               = 1.0.0
+version               = 1.1.0
 display_name          = ChBond
 desc                  = "切换Linux Bond网口"
 platform              = all
 source                = thirdparty
 maintainer            = lzh
+maintainer_url        = https://github.com/HackerLZH/ChBond
 distributor           = lzh
+distributor_url       = https://github.com/HackerLZH/ChBond
 desktop_uidir         = ui
 desktop_applaunchname = ChBond.Application
